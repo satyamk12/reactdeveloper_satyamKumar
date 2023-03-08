@@ -1,24 +1,51 @@
-import logo from './logo.svg';
+// import './App.css';
+// import Home from './Components/Home/Home';
+// import LoginForm from './Components/Login/LoginForm';
+// import { Route, Routes } from "react-router-dom";
+// import Dashboard from './Components/Dashboard/Dashboard';
+
+// function App() {
+//   return (
+//     <div className="App">
+//       {/* <Home/> */}
+      
+//     <Routes>
+//       <Route path="/" element={<Home />} />
+//       <Route path="/login" element={ <LoginForm/> } />
+//       <Route path="/dashboard" element={ <Dashboard/> } />
+//     </Routes>
+//      </div>
+//   );
+// }
+
+// export default App;
+
+
 import './App.css';
+import Home from './Components/Home/Home';
+import LoginForm from './Components/Login/LoginForm';
+import { Route, Routes } from "react-router-dom";
+import Dashboard from './Components/Dashboard/Dashboard';
+import { Provider } from 'react-redux';
+import store from './State/store';
+
 
 function App() {
+
+  
+
   return (
+    <Provider store={store}>
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      {/* <Home/> */}
+      
+      <Routes>
+      <Route path="/" element={<Home />} />
+      <Route path="/login" element={ <LoginForm/> } />
+      <Route path="/dashboard" element={ <Dashboard/> } />
+    </Routes>
     </div>
+    </Provider>
   );
 }
 
